@@ -6,7 +6,7 @@
 --
 -- Maintainer  :  Mahmut Bulut
 -- Stability   :  unstable
--- Portability :  
+-- Portability :
 --
 -- |
 --
@@ -16,5 +16,7 @@ module Main (
     main
 ) where
 
-main = putStrLn "Put your test code here"
+import AI.Planning.Swarm.SandData
+
+main = print (AgentObjCoor [(1, 8080, "Suleyman", (1234.354, 453.234))])
 
