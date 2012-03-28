@@ -24,7 +24,7 @@ source-repository head
     location: git://github.com/regularlambda/sandlib.git
 
 library
-    build-depends: base >= 2 && < 4
+    build-depends: base >= 2
     exposed-modules: AI.Planning.Swarm.SandData
     exposed: True
     buildable: True
