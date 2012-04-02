@@ -8,13 +8,13 @@ import Data.Version (Version(..))
 import System.Environment (getEnv)
 
 version :: Version
-version = Version {versionBranch = [0,0,2], versionTags = []}
+version = Version {versionBranch = [0,0,3], versionTags = []}
 
 bindir, libdir, datadir, libexecdir :: FilePath
 
 bindir     = "/Users/mahmutbulut0/.cabal/bin"
-libdir     = "/Users/mahmutbulut0/.cabal/lib/sandlib-0.0.2/ghc-7.4.1"
-datadir    = "/Users/mahmutbulut0/.cabal/share/sandlib-0.0.2"
+libdir     = "/Users/mahmutbulut0/.cabal/lib/sandlib-0.0.3/ghc-7.4.1"
+datadir    = "/Users/mahmutbulut0/.cabal/share/sandlib-0.0.3"
 libexecdir = "/Users/mahmutbulut0/.cabal/libexec"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir :: IO FilePath

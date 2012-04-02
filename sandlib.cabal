@@ -1,5 +1,5 @@
 name: sandlib
-version: 0.0.2
+version: 0.0.3
 cabal-version: >=1.6
 build-type: Simple
 license: BSD3
@@ -18,15 +18,17 @@ category: AI
 author: Mahmut Bulut <mahmutbulut0@gmail.com>
 tested-with: GHC -any
 data-dir: ""
-
+ 
 source-repository head
     type: git
     location: git://github.com/regularlambda/sandlib.git
-
+ 
 library
-    build-depends: base >= 2 && < 4
+    build-depends: base >=2 && <=5
     exposed-modules: AI.Planning.Swarm.SandData
     exposed: True
     buildable: True
     hs-source-dirs: . src
-
+    other-modules: AI.Planning.Swarm.SandClass
+                   AI.Planning.Swarm.RendSand
+ 

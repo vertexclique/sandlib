@@ -21,7 +21,7 @@ data SandData = AgentName String
               | AgentObj [(Int, Int, String)]
               | AgentObjCoor [(Int, Int, String, (Double, Double))]
               -- [Num, Port, Name, (CoorX, CoorY)]
-              deriving (Eq, Ord, Show)
+              deriving (Read, Eq, Ord, Show)
 
 getAgentName :: SandData -> Maybe String
 getAgentName (AgentName s) = Just s
