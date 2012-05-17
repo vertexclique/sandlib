@@ -1,0 +1,4 @@
+language: haskell
+notifications:
+  recipients:
+    - mahmutbulut0@gmail.com
