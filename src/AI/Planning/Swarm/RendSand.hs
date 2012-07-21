@@ -17,11 +17,15 @@ module AI.Planning.Swarm.RendSand where
 import Data.List (intercalate)
 import AI.Planning.Swarm.SandData
 
-rendSandData :: SandData -> String
+rendSandData :: SandData -> Maybe String
 
-rendSandData (AgentName s) = show s
-rendSandData (AgentNum a) = show a
-rendSandData (AgentPort p) = show p
-rendSandData (AgentCoor co) = undefined
+rendSandData (AgentName s) = Just (show s)
+rendSandData (AgentNum a) = Just (show a)
+rendSandData (AgentPort p) = Just (show p)
+rendSandData (AgentCoor co) = Just ((:co) )
 rendSandData (AgentObj fr) = undefined
 rendSandData (AgentObjCoor re) = undefined
+
+-- error bound olarak bunu sectim overlap pattern olabilir
+-- simdilik yorum olarak kalsın
+-- rendSandData _ = Nothing

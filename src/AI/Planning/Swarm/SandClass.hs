@@ -18,6 +18,7 @@ module AI.Planning.Swarm.SandClass (
 
 import AI.Planning.Swarm.SandData
 
+-- Burada ne yazdim ben? Anlamadim
 type SandError = String
 
 class Sand a where

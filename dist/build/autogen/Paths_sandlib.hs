@@ -4,24 +4,27 @@ module Paths_sandlib (
     getDataFileName
   ) where
 
+import qualified Control.Exception as Exception
 import Data.Version (Version(..))
 import System.Environment (getEnv)
+catchIO :: IO a -> (Exception.IOException -> IO a) -> IO a
+catchIO = Exception.catch
+
 
 version :: Version
 version = Version {versionBranch = [0,0,3], versionTags = []}
-
 bindir, libdir, datadir, libexecdir :: FilePath
 
-bindir     = "/Users/mahmutbulut0/.cabal/bin"
-libdir     = "/Users/mahmutbulut0/.cabal/lib/sandlib-0.0.3/ghc-7.4.1"
-datadir    = "/Users/mahmutbulut0/.cabal/share/sandlib-0.0.3"
-libexecdir = "/Users/mahmutbulut0/.cabal/libexec"
+bindir     = "/home/vertexclique/.cabal/bin"
+libdir     = "/home/vertexclique/.cabal/lib/sandlib-0.0.3/ghc-7.4.1"
+datadir    = "/home/vertexclique/.cabal/share/sandlib-0.0.3"
+libexecdir = "/home/vertexclique/.cabal/libexec"
 
 getBinDir, getLibDir, getDataDir, getLibexecDir :: IO FilePath
-getBinDir = catch (getEnv "sandlib_bindir") (\_ -> return bindir)
-getLibDir = catch (getEnv "sandlib_libdir") (\_ -> return libdir)
-getDataDir = catch (getEnv "sandlib_datadir") (\_ -> return datadir)
-getLibexecDir = catch (getEnv "sandlib_libexecdir") (\_ -> return libexecdir)
+getBinDir = catchIO (getEnv "sandlib_bindir") (\_ -> return bindir)
+getLibDir = catchIO (getEnv "sandlib_libdir") (\_ -> return libdir)
+getDataDir = catchIO (getEnv "sandlib_datadir") (\_ -> return datadir)
+getLibexecDir = catchIO (getEnv "sandlib_libexecdir") (\_ -> return libexecdir)
 
 getDataFileName :: FilePath -> IO FilePath
 getDataFileName name = do

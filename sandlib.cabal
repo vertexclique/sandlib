@@ -29,6 +29,6 @@ library
     exposed: True
     buildable: True
     hs-source-dirs: . src
-    other-modules: AI.Planning.Swarm.SandClass
-                   AI.Planning.Swarm.RendSand
+    other-modules: AI.Planning.Swarm.SandError
+                   AI.Planning.Swarm.SandClass AI.Planning.Swarm.RendSand
  
